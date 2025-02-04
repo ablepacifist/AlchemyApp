@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="alchemy.srsys">
+
+    <!-- Application-level configurations -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Launcher Activity -->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Inventory Activity -->
+        <activity
+            android:name=".ui.InventoryActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- Known Ingredients Activity -->
+        <activity
+            android:name=".ui.KnownIngredientsActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- Additional Activities -->
+        <!-- Declare other activities here as needed -->
+
+    </application>
+
+    <!-- Required permissions -->
+    <!-- Add any required permissions here -->
+    <!-- Example:
+    <uses-permission android:name="android.permission.INTERNET" />
+    -->
+
+</manifest>

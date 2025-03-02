@@ -1,37 +1,71 @@
 package alchemy.srsys.logic;
 
-import alchemy.srsys.object.IInventory;
-import alchemy.srsys.object.IStubDatabase;
+import java.util.HashMap;
+import java.util.Map;
+
 import alchemy.srsys.object.IIngredient;
-import alchemy.srsys.object.Player;
-import java.util.List;
+import alchemy.srsys.object.IInventory;
+import alchemy.srsys.object.IPotion;
 
 public class Inventory implements IInventory {
-    private IStubDatabase database;
-    private Player player;
+    private Map<IIngredient, Integer> ingredientQuantities;
+    private Map<IPotion, Integer> potionQuantities;
 
-    public Inventory(IStubDatabase database, Player player) {
-        this.database = database;
-        this.player = player;
+    public Inventory() {
+        this.ingredientQuantities = new HashMap<>();
+        this.potionQuantities = new HashMap<>();
+    }
+
+    // Ingredient methods
+    @Override
+    public void addIngredient(IIngredient ingredient, int quantity) {
+        ingredientQuantities.put(ingredient, ingredientQuantities.getOrDefault(ingredient, 0) + quantity);
     }
 
     @Override
-    public void addIngredient(IIngredient ingredient) {
-        database.addIngredientToInventory(player.getName(), ingredient);
+    public void removeIngredient(IIngredient ingredient, int quantity) {
+        int currentQuantity = ingredientQuantities.getOrDefault(ingredient, 0);
+        if (currentQuantity > quantity) {
+            ingredientQuantities.put(ingredient, currentQuantity - quantity);
+        } else {
+            ingredientQuantities.remove(ingredient);
+        }
     }
 
     @Override
-    public void removeIngredient(IIngredient ingredient) {
-        database.removeIngredientFromInventory(player.getName(), ingredient);
+    public Map<IIngredient, Integer> getIngredients() {
+        return new HashMap<>(ingredientQuantities);
     }
 
     @Override
-    public List<IIngredient> getIngredients() {
-        return database.getInventoryIngredients(player.getName());
+    public boolean containsIngredient(IIngredient ingredient) {
+        return ingredientQuantities.containsKey(ingredient);
+    }
+
+    // Potion methods
+    @Override
+    public void addPotion(IPotion potion, int quantity) {
+        potionQuantities.put(potion, potionQuantities.getOrDefault(potion, 0) + quantity);
     }
 
     @Override
-    public boolean contains(IIngredient ingredient) {
-        return getIngredients().contains(ingredient);
+    public void removePotion(IPotion potion, int quantity) {
+        int currentQuantity = potionQuantities.getOrDefault(potion, 0);
+        if (currentQuantity > quantity) {
+            potionQuantities.put(potion, currentQuantity - quantity);
+        } else {
+            potionQuantities.remove(potion);
+        }
     }
+
+    @Override
+    public Map<IPotion, Integer> getPotions() {
+        return new HashMap<>(potionQuantities);
+    }
+
+    @Override
+    public boolean containsPotion(IPotion potion) {
+        return potionQuantities.containsKey(potion);
+    }
+
 }

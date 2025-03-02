@@ -1,7 +1,9 @@
 package alchemy.srsys.object;
-import alchemy.srsys.object.IIngredient;
-import alchemy.srsys.object.IEffect;
+import java.util.List;
+
 public interface IPotion {
+    int getId();
+
     /**
      * Gets the name of the potion.
      * @return the potion name
@@ -10,9 +12,10 @@ public interface IPotion {
 
     /**
      * Gets the array of effects of the potion.
+     *
      * @return an array of effects
      */
-    IEffect[] getEffects();
+    List<IEffect> getEffects();
 
     /**
      * Gets the first ingredient used in the potion.

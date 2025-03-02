@@ -1,14 +1,21 @@
 package alchemy.srsys.object;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class Ingredient implements IIngredient {
+    private int id;
     private String name;
-    private IEffect[] effects;
+    private List<IEffect> effects;
 
-    public Ingredient(String name) {
+    public Ingredient(int id, String name, List<IEffect> effects) {
+        this.id = id;
         this.name = name;
-        this.effects = new IEffect[4]; // Up to 4 possible effects
+        this.effects = effects;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override
@@ -17,26 +24,17 @@ public class Ingredient implements IIngredient {
     }
 
     @Override
-    public IEffect[] getEffects() {
+    public List<IEffect> getEffects() {
         return effects;
     }
 
     @Override
     public void learnEffect(IEffect effect) {
-        for (int i = 0; i < effects.length; i++) {
-            if (effects[i] == null) {
-                effects[i] = effect;
-                break;
-            } else if (effects[i].getId() == effect.getId()) {
-                // Effect already known
-                break;
-            }
-        }
+
     }
 
     @Override
     public boolean hasEffect(IEffect effect) {
-        return Arrays.stream(effects)
-                .anyMatch(e -> e != null && e.getId() == effect.getId());
+        return false;
     }
 }

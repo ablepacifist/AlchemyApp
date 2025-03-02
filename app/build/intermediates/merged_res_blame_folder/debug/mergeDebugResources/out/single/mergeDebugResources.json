@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_fragment_brew.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\fragment_brew.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_item_ingredient_entry.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\item_ingredient_entry.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_item_knowledge_entry.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\item_knowledge_entry.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "alchemy.srsys.app-debug-19:/layout_fragment_item_detail.xml.flat",
+        "source": "alchemy.srsys.app-main-21:/layout/fragment_item_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\drawable_student.png.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\drawable\\student.png"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\drawable_mortarboard.png.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\drawable\\mortarboard.png"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\menu_menu_course_students.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\menu\\menu_course_students.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\drawable_ic_back_arrow.png.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\drawable\\ic_back_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\menu_menu_courses.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\menu\\menu_courses.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_fragment_knowledge_book.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\fragment_knowledge_book.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_fragment_inventory.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\fragment_inventory.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\menu_menu_students.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\menu\\menu_students.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_item_inventory.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\item_inventory.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_fragment_ingredients.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\fragment_ingredients.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\menu_menu_home.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\menu\\menu_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\menu_menu_student_courses.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\menu\\menu_student_courses.xml"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\drawable_writer.png.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\drawable\\writer.png"
+    },
+    {
+        "merged": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-debug-19:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\diduo\\.gradle\\daemon\\8.12.1\\alchemy.srsys.app-main-21:\\layout\\activity_login.xml"
+    }
+]

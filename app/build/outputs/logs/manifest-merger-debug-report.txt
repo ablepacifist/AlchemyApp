@@ -1,0 +1,182 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:1:1-31:12
+INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:1:1-31:12
+INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:1:1-31:12
+INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:1:1-31:12
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\9b31bed00d00d4639b354f864ee7fb0d\transformed\material-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e29f28242fba2ce00ceb464cf46a0a52\transformed\constraintlayout-2.1.0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\840027ab38a69a249809d4fbc6db39d8\transformed\appcompat-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\afe067126d0e488e8a168699371acc23\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a9d1c95ee4982799a1fc2b326484fa04\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\diduo\.gradle\caches\8.12.1\transforms\79f1058cc5c5e8abf3886a5b1c3d76c6\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\c37b0c18f3adbd547d90f1f09508a3e3\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\6a534032de4353e2f5acc3e35f257d02\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\d1e2e402d99d498de1437a5dd53b6501\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\142ad8c4431b61287fa06b8da73cdcdc\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\8397f90fcb3e3031b146a3c2e8dca554\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\71a084ff0c6c2401fb5b2fbba6bd9471\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a272b0a2a373698c776316adf253fa06\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\f2d1896ce10f029386bc69c2b1bbc87a\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\5fa84673fb48f835e9d9a76cfe5196d2\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\10776dc9475c82caceb683e064019ffb\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\69cbdaa9d6f262ff0486122b17d46989\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a6c319fb7774b6d2783632df74685cd6\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.7.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\f39924c17050d613fe8ba5224d17882e\transformed\core-1.7.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\17eea4fcff6770a8e68aeab050642312\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e26110c397879db4ab5cb443e473c13d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\8e5b3051d1fbc7047e8544e2342de3c9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\3b7241c9e6062f89d671280e8074b8ab\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\46fe85c16270f5fdc7e4577b3e1e183e\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\adb0dc8b110b190dee78fa9432ca4b08\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\58d0cd669376ab8df494e9f3e251de04\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\8e2653be0e93652c527f806b87afbf4f\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\1340c1071a3331fa0b5124a4e974aa72\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\c33d7d34f8ff9cf40c05745b4ef27a86\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a3da89bed5ac2ca372c8a52acb64d6a9\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\d47cc9d182d083376d406120fc677fc8\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\5ea7cf6eeed198b974d348add5878b5c\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\3b167b983e6e1ca8b3afe3e3841611e9\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\78645e97c1f20646b8b06bc1ed98a44f\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\bbd0c6c71c732390b8af9fe7e8919c76\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
+	package
+		INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:3:5-29:19
+INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:3:5-29:19
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\9b31bed00d00d4639b354f864ee7fb0d\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\9b31bed00d00d4639b354f864ee7fb0d\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e29f28242fba2ce00ceb464cf46a0a52\transformed\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e29f28242fba2ce00ceb464cf46a0a52\transformed\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.7.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\f39924c17050d613fe8ba5224d17882e\transformed\core-1.7.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.7.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\f39924c17050d613fe8ba5224d17882e\transformed\core-1.7.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e26110c397879db4ab5cb443e473c13d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e26110c397879db4ab5cb443e473c13d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.7.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\f39924c17050d613fe8ba5224d17882e\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:8:9-35
+	android:label
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:7:9-32
+	android:icon
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:6:9-56
+	android:allowBackup
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:5:9-35
+	android:theme
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:9:9-40
+	android:name
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:4:9-42
+activity#alchemy.srsys.UI.LoginActivity
+ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:12:9-18:20
+	android:exported
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:13:13-36
+	android:name
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:12:19-51
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:14:13-17:29
+action#android.intent.action.MAIN
+ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:15:17-69
+	android:name
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:15:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:16:27-74
+activity#alchemy.srsys.UI.MainActivity
+ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:21:9-23:20
+	android:exported
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:22:13-36
+	android:name
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:21:19-50
+activity#alchemy.srsys.UI.RegisterActivity
+ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:26:9-28:20
+	android:exported
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:27:13-36
+	android:name
+		ADDED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml:26:19-54
+uses-sdk
+INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml
+INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\9b31bed00d00d4639b354f864ee7fb0d\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\9b31bed00d00d4639b354f864ee7fb0d\transformed\material-1.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e29f28242fba2ce00ceb464cf46a0a52\transformed\constraintlayout-2.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e29f28242fba2ce00ceb464cf46a0a52\transformed\constraintlayout-2.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\840027ab38a69a249809d4fbc6db39d8\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\840027ab38a69a249809d4fbc6db39d8\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\afe067126d0e488e8a168699371acc23\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\afe067126d0e488e8a168699371acc23\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a9d1c95ee4982799a1fc2b326484fa04\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a9d1c95ee4982799a1fc2b326484fa04\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\diduo\.gradle\caches\8.12.1\transforms\79f1058cc5c5e8abf3886a5b1c3d76c6\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\diduo\.gradle\caches\8.12.1\transforms\79f1058cc5c5e8abf3886a5b1c3d76c6\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\c37b0c18f3adbd547d90f1f09508a3e3\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\c37b0c18f3adbd547d90f1f09508a3e3\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\6a534032de4353e2f5acc3e35f257d02\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\6a534032de4353e2f5acc3e35f257d02\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\d1e2e402d99d498de1437a5dd53b6501\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\d1e2e402d99d498de1437a5dd53b6501\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\142ad8c4431b61287fa06b8da73cdcdc\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\142ad8c4431b61287fa06b8da73cdcdc\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\8397f90fcb3e3031b146a3c2e8dca554\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\8397f90fcb3e3031b146a3c2e8dca554\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\71a084ff0c6c2401fb5b2fbba6bd9471\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\71a084ff0c6c2401fb5b2fbba6bd9471\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a272b0a2a373698c776316adf253fa06\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a272b0a2a373698c776316adf253fa06\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\f2d1896ce10f029386bc69c2b1bbc87a\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\f2d1896ce10f029386bc69c2b1bbc87a\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\5fa84673fb48f835e9d9a76cfe5196d2\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\5fa84673fb48f835e9d9a76cfe5196d2\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\10776dc9475c82caceb683e064019ffb\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\10776dc9475c82caceb683e064019ffb\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\69cbdaa9d6f262ff0486122b17d46989\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\69cbdaa9d6f262ff0486122b17d46989\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a6c319fb7774b6d2783632df74685cd6\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a6c319fb7774b6d2783632df74685cd6\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.7.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\f39924c17050d613fe8ba5224d17882e\transformed\core-1.7.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\f39924c17050d613fe8ba5224d17882e\transformed\core-1.7.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\17eea4fcff6770a8e68aeab050642312\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\17eea4fcff6770a8e68aeab050642312\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e26110c397879db4ab5cb443e473c13d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\e26110c397879db4ab5cb443e473c13d\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\8e5b3051d1fbc7047e8544e2342de3c9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\8e5b3051d1fbc7047e8544e2342de3c9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\3b7241c9e6062f89d671280e8074b8ab\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\3b7241c9e6062f89d671280e8074b8ab\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\46fe85c16270f5fdc7e4577b3e1e183e\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\46fe85c16270f5fdc7e4577b3e1e183e\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\adb0dc8b110b190dee78fa9432ca4b08\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\adb0dc8b110b190dee78fa9432ca4b08\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\58d0cd669376ab8df494e9f3e251de04\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\58d0cd669376ab8df494e9f3e251de04\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\8e2653be0e93652c527f806b87afbf4f\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\8e2653be0e93652c527f806b87afbf4f\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\1340c1071a3331fa0b5124a4e974aa72\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\diduo\.gradle\caches\8.12.1\transforms\1340c1071a3331fa0b5124a4e974aa72\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\c33d7d34f8ff9cf40c05745b4ef27a86\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\c33d7d34f8ff9cf40c05745b4ef27a86\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a3da89bed5ac2ca372c8a52acb64d6a9\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\a3da89bed5ac2ca372c8a52acb64d6a9\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\d47cc9d182d083376d406120fc677fc8\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\d47cc9d182d083376d406120fc677fc8\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\5ea7cf6eeed198b974d348add5878b5c\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\5ea7cf6eeed198b974d348add5878b5c\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\3b167b983e6e1ca8b3afe3e3841611e9\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\3b167b983e6e1ca8b3afe3e3841611e9\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\78645e97c1f20646b8b06bc1ed98a44f\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\78645e97c1f20646b8b06bc1ed98a44f\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\bbd0c6c71c732390b8af9fe7e8919c76\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\diduo\.gradle\caches\8.12.1\transforms\bbd0c6c71c732390b8af9fe7e8919c76\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+	android:targetSdkVersion
+		INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Code 3350\AlchemyApp\app\src\main\AndroidManifest.xml

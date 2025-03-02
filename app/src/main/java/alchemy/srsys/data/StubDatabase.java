@@ -1,177 +1,143 @@
 package alchemy.srsys.data;
 
 import alchemy.srsys.object.*;
-import java.io.*;
 import java.util.*;
 
-
-import alchemy.srsys.object.*;
-
-import java.io.*;
-import java.util.*;
 
 public class StubDatabase implements IStubDatabase {
     // Master data
     private Map<Integer, IEffect> effectsById;
-    private Map<String, IEffect> effectsByName;
+    private Map<String, IEffect> effectsByTitle;
+    private Map<Integer, IIngredient> ingredientsById;
     private Map<String, IIngredient> ingredientsByName;
 
-    // Player-specific data
+    // Player data
+    private Map<Integer, Player> players;
+    private int nextPotionId;
+    private int nextPlayerId=1;
+
+    // Inventory and Knowledge Book
     private List<IIngredient> inventory;
     private Map<String, IEffect[]> knowledgeBook;
 
     public StubDatabase() {
         effectsById = new HashMap<>();
-        effectsByName = new HashMap<>();
+        effectsByTitle = new HashMap<>();
+        ingredientsById = new HashMap<>();
         ingredientsByName = new HashMap<>();
+        players = new HashMap<>();
+        nextPotionId = 1;
+
         inventory = new ArrayList<>();
         knowledgeBook = new HashMap<>();
-        loadEffects("effects.txt");
-        loadKnowledgeBook("masterList.txt");
-        loadIngredients("ingredientList.txt");
-        loadPlayerInventory("inventory.txt");
+
+        initializeEffects();
+        initializeIngredients();
+        initializePlayers();
     }
 
-    // Methods to load master data from files (effects.txt, masterList.txt)
-    // ...
-
-    // Methods to load player data from files (inventory.txt, ingredientList.txt)
-    public void loadPlayerInventory(String filename) {
-        // Load inventory from inventory.txt
-        // Format: ItemType,Name,Quantity
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",");
-                if (parts.length >= 3) {
-                    String itemType = parts[0].trim();
-                    String name = parts[1].trim();
-                    int quantity = Integer.parseInt(parts[2].trim());
-
-                    if (itemType.equalsIgnoreCase("Ingredient")) {
-                        IIngredient ingredient = findIngredientByName(name);
-                        if (ingredient != null) {
-                            for (int i = 0; i < quantity; i++) {
-                                inventory.add(ingredient);
-                            }
-                        }
-                    }
-                    // Handle potions if needed
-                }
-            }
-        } catch (IOException e) {
-            System.err.println("Error loading player inventory: " + e.getMessage());
-        }
+    // Initialize master effects
+    private void initializeEffects() {
+        // Example effects
+        addEffect(new Effect(1, "Healing"));
+        addEffect(new Effect(2, "Poison"));
+        addEffect(new Effect(3, "Strength"));
+        addEffect(new Effect(4, "Weakness"));
+        // Add more effects as needed
     }
 
-    public void loadKnowledgeBook(String filename) {
-        // Load knowledge from ingredientList.txt
-        // Format: IngredientName,Effect1,Effect2,Effect3,Effect4
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",");
-                if (parts.length >= 1) {
-                    String ingredientName = parts[0].trim();
-                    IEffect[] knownEffects = new IEffect[4];
-                    for (int i = 1; i < parts.length && i <= 4; i++) {
-                        String effectName = parts[i].trim();
-                        if (!effectName.equalsIgnoreCase("NULL") && !effectName.isEmpty()) {
-                            IEffect effect = findEffectByName(effectName);
-                            if (effect != null) {
-                                knownEffects[i - 1] = effect;
-                            }
-                        }
-                    }
-                    knowledgeBook.put(ingredientName, knownEffects);
-                }
-            }
-        } catch (IOException e) {
-            System.err.println("Error loading knowledge book: " + e.getMessage());
-        }
+    public void addEffect(IEffect effect) {
+        effectsById.put(effect.getId(), effect);
+        effectsByTitle.put(effect.getTitle().toLowerCase(), effect);
     }
 
-    // Methods to manage inventory
-    public void addIngredientToInventory(String playerName,IIngredient ingredient) {
-        playerInventories.computeIfAbsent(playerName, k -> new ArrayList<>()).add(ingredient);
+    // Initialize master ingredients
+    private void initializeIngredients() {
+        // Example ingredients
+        addIngredient(new Ingredient(1, "Red Herb", Arrays.asList(
+                effectsById.get(1), // Healing
+                effectsById.get(3), // Strength
+                null,
+                null
+        )));
+        addIngredient(new Ingredient(2, "Blue Mushroom", Arrays.asList(
+                effectsById.get(2), // Poison
+                effectsById.get(4), // Weakness
+                null,
+                null
+        )));
+        addIngredient(new Ingredient(3, "Yellow Flower", Arrays.asList(
+                effectsById.get(1), // Healing
+                effectsById.get(2), // Poison
+                null,
+                null
+        )));
+        // Add more ingredients as needed
+    }
+    // Initialize players
+    private void initializePlayers() {
+        // Create a player with username "alex" and password "zx7364pl" and ID 1
+        Player player = new Player(1, "alex", "zx7364pl", getAllIngredients());
+
+        // Add some inventory items to the player
+        IInventory inventory = player.getInventory();
+
+        IIngredient redHerb = getIngredientByName("Red Herb");
+        IIngredient blueMushroom = getIngredientByName("Blue Mushroom");
+        IIngredient yellowFlower = getIngredientByName("Yellow Flower");
+        // Add quantities of ingredients
+        inventory.addIngredient(redHerb, 3);       // Red Herb x3
+        inventory.addIngredient(blueMushroom, 1);  // Blue Mushroom x1
+        inventory.addIngredient(yellowFlower, 1);  // yellow flower x4
+
+        // Add the player to the players map
+        players.put(player.getId(), player);
     }
 
-    public void removeIngredientFromInventory(IIngredient ingredient) {
-        inventory.remove(ingredient);
+    public void addIngredient(IIngredient ingredient) {
+        ingredientsById.put(ingredient.getId(), ingredient);
+        ingredientsByName.put(ingredient.getName().toLowerCase(), ingredient);
     }
 
-    public List<IIngredient> getInventoryIngredients() {
-        return new ArrayList<>(inventory);
+    // Player management
+    public void addPlayer(Player player) {
+        players.put(player.getId(), player);
     }
 
-    // Methods to manage knowledge book
-    public void updateKnowledgeBook(IIngredient ingredient) {
-        String name = ingredient.getName();
-        IEffect[] knownEffects = knowledgeBook.getOrDefault(name, new IEffect[4]);
-        IEffect[] ingredientEffects = ingredient.getEffects();
-
-        for (int i = 0; i < knownEffects.length; i++) {
-            if (knownEffects[i] == null && ingredientEffects[i] != null) {
-                knownEffects[i] = ingredientEffects[i];
-            }
-        }
-        knowledgeBook.put(name, knownEffects);
+    public Player getPlayer(int playerId) {
+        return players.get(playerId);
     }
 
-    public Map<String, IEffect[]> getKnowledgeBook() {
-        return knowledgeBook;
+    public Collection<Player> getAllPlayers() {
+        return players.values();
     }
 
-    // Helper methods
+    // Ingredient retrieval
+    public IIngredient getIngredientById(int id) {
+        return ingredientsById.get(id);
+    }
 
-
-    @Override
-    public void loadEffects(String filename) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                // Format: id,effectName
-                String[] parts = line.split(",");
-                if (parts.length >= 2) {
-                    int id = Integer.parseInt(parts[0].trim());
-                    String name = parts[1].trim();
-                    IEffect effect = new Effect(id, name);
-                    effectsById.put(id, effect);
-                    effectsByName.put(name.toLowerCase(), effect);
-                }
-            }
-        } catch (IOException e) {
-            System.err.println("Error loading effects: " + e.getMessage());
-        }
+    public IIngredient getIngredientByName(String name) {
+        return ingredientsByName.get(name.toLowerCase());
     }
 
     @Override
     public void loadIngredients(String filename) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                // Format: ingredientName,effect1,effect2,effect3,effect4
-                String[] parts = line.split(",");
-                if (parts.length >= 1) {
-                    String name = parts[0].trim();
-                    IIngredient ingredient = new Ingredient(name);
-                    for (int i = 1; i < parts.length && i <= 4; i++) {
-                        String effectName = parts[i].trim();
-                        if (!effectName.equalsIgnoreCase("NULL") && !effectName.isEmpty()) {
-                            IEffect effect = findEffectByName(effectName);
-                            if (effect != null) {
-                                ingredient.learnEffect(effect);
-                            } else {
-                                System.err.println("Effect not found: " + effectName);
-                            }
-                        }
-                    }
-                    ingredientsByName.put(name.toLowerCase(), ingredient);
-                }
-            }
-        } catch (IOException e) {
-            System.err.println("Error loading ingredients: " + e.getMessage());
-        }
+        // Simulate loading ingredients from a file
+        // For stub purposes, we'll add a new ingredient
+        addIngredient(new Ingredient(4, "Black Root", Arrays.asList(
+                effectsById.get(3), // Strength
+                effectsById.get(4), // Weakness
+                null,
+                null
+        )));
+    }
+
+    @Override
+    public void loadEffects(String filename) {
+        // Simulate loading effects from a file
+        // For stub purposes, we'll add a new effect
+        addEffect(new Effect(5, "Invisibility"));
     }
 
     @Override
@@ -180,21 +146,70 @@ public class StubDatabase implements IStubDatabase {
     }
 
     @Override
-    public List<IIngredient> getAllIngredients() {
-        return new ArrayList<>(ingredientsByName.values());
-    }
-
-    @Override
     public IEffect findEffectById(int id) {
         return effectsById.get(id);
     }
 
-    @Override
+    public List<IIngredient> getAllIngredients() {
+        return new ArrayList<>(ingredientsById.values());
+    }
+
     public List<IEffect> getAllEffects() {
         return new ArrayList<>(effectsById.values());
     }
 
-    private IEffect findEffectByName(String name) {
-        return effectsByName.get(name.toLowerCase());
+    // Effect retrieval
+    public IEffect getEffectById(int id) {
+        return effectsById.get(id);
     }
+
+    public IEffect getEffectByTitle(String title) {
+        return effectsByTitle.get(title.toLowerCase());
+    }
+
+    // Inventory management
+    @Override
+    public void addIngredientToInventory(IIngredient ingredient) {
+        inventory.add(ingredient);
+    }
+
+    @Override
+    public void removeIngredientFromInventory(IIngredient ingredient) {
+        inventory.remove(ingredient);
+    }
+
+    @Override
+    public List<IIngredient> getInventoryIngredients() {
+        return new ArrayList<>(inventory);
+    }
+
+    // Knowledge Book management
+    @Override
+    public void updateKnowledgeBook(IIngredient ingredient) {
+        knowledgeBook.put(ingredient.getName(), ingredient.getEffects().toArray(new IEffect[0]));
+    }
+
+    @Override
+    public Map<String, IEffect[]> getKnowledgeBook() {
+        return knowledgeBook;
+    }
+
+    public int getNextPlayerId() {
+        return nextPlayerId++;
+    }
+
+    public Player getPlayerByUsername(String username) {
+        for (Player player : players.values()) {
+            if (player.getUsername().equalsIgnoreCase(username)) {
+                return player;
+            }
+        }
+        return null;
+    }
+
+    // Potion creation
+    public int getNextPotionId() {
+        return nextPotionId++;
+    }
+
 }

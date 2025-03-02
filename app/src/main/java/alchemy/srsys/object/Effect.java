@@ -26,3 +26,4 @@ public class Effect implements IEffect {
         return description;
     }
 }
+

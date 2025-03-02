@@ -1,31 +1,22 @@
 package alchemy.srsys.object;
 
-import alchemy.srsys.object.IIngredient;
-import java.util.List;
+import java.util.Map;
 
 public interface IInventory {
-    /**
-     * Adds an ingredient to the inventory.
-     * @param ingredient the ingredient to add
-     */
-    void addIngredient(IIngredient ingredient);
+    // Ingredient methods
+    void addIngredient(IIngredient ingredient, int quantity);
+    void removeIngredient(IIngredient ingredient, int quantity);
+    Map<IIngredient, Integer> getIngredients();
+    boolean containsIngredient(IIngredient ingredient);
 
-    /**
-     * Removes an ingredient from the inventory.
-     * @param ingredient the ingredient to remove
-     */
-    void removeIngredient(IIngredient ingredient);
+    // Potion methods
+    void addPotion(IPotion potion, int quantity);
 
-    /**
-     * Gets the list of ingredients in the inventory.
-     * @return a list of ingredients
-     */
-    List<IIngredient> getIngredients();
+    Map<IPotion, Integer> getPotions();
 
-    /**
-     * Checks if the inventory contains a specific ingredient.
-     * @param ingredient the ingredient to check
-     * @return true if present, false otherwise
-     */
-    boolean contains(IIngredient ingredient);
+    void removePotion(IPotion potion, int i);
+
+    boolean containsPotion(IPotion potion);
 }
+
+

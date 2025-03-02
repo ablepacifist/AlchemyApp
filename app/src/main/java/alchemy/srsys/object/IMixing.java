@@ -5,11 +5,12 @@ import alchemy.srsys.object.IPotion;
 
 public interface IMixing {
     /**
-     * Attempts to mix two ingredients to create a potion.
-     * If the ingredients share common effects, a potion is created.
-     * @param ingredient1 the first ingredient
-     * @param ingredient2 the second ingredient
-     * @return the resulting potion if successful, null otherwise
+     * Mixes two ingredients to create a potion.
+     * Updates player's inventory and knowledge book.
+     * @param player the player
+     * @param ingredient1 first ingredient
+     * @param ingredient2 second ingredient
+     * @return the created potion if successful, null otherwise
      */
-    IPotion mixIngredients(IIngredient ingredient1, IIngredient ingredient2);
+    IPotion mixIngredients(Player player, IIngredient ingredient1, IIngredient ingredient2);
 }

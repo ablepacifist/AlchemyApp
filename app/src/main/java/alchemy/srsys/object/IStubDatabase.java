@@ -53,4 +53,15 @@ public interface IStubDatabase {
     void updateKnowledgeBook(IIngredient ingredient);
 
     Map<String, IEffect[]> getKnowledgeBook();
+
+    Player getPlayerByUsername(String username);
+
+    int getNextPlayerId();
+
+    void addPlayer(Player player);
+
+    Player getPlayer(int playerId);
+    IIngredient getIngredientByName(String name);
+
+    int getNextPotionId();
 }

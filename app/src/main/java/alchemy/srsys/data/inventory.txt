@@ -1,0 +1,11 @@
+Ingredient,Ginkgo Leaf,3
+Potion,Restore Health,NULL,NULL,NULL,1
+Ingredient,Tomato,8
+Ingredient,Garlic,11
+Ingredient,Wheat Grain,17
+Ingredient,Apple,9
+Potion,Seeking,NULL,NULL,NULL,2
+Ingredient,Snake Skin,2
+Ingredient,Blue Entoloma Cap,1
+Ingredient,Snowberries,1
+Ingredient,Emetic Russula Cap,2

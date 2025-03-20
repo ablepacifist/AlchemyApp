@@ -1,0 +1,46 @@
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+
+# Local configuration file (SDK path, etc.)
+local.properties
+
+# Windows thumbnail DB
+Thumbs.db
+
+# macOS files
+.DS_Store
+
+# Android Studio
+*.iml
+.idea
+.gradle
+build/
+.navigation
+captures/
+output.json
+
+# NDK
+obj/
+.externalNativeBuild
+/jniLibs
+# Android build intermediates
+app/build/
+
+# Debug reports
+app/build/intermediates/
+
+# JSON metadata
+*.json
+!app/src/main/assets/*.json  # If you need to keep some JSONs in assets

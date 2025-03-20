@@ -289,4 +289,10 @@ public class StubDatabase implements IStubDatabase {
     }
 
 
+    @Override
+    public void addPotion(Potion potion) {
+        // only needed for HSQLDB
+    }
+
+
 }

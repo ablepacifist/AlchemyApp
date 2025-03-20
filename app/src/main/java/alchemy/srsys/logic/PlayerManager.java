@@ -117,27 +117,30 @@ public class PlayerManager {
 
         // Retrieve master effects for the given ingredient.
         List<IEffect> masterEffects = db.getEffectsForIngredient(ingredient.getId());
-        // Retrieve the player's current knowledge (as an unmodifiable map) then convert it into a mutable copy.
-        Map<Integer, List<IEffect>> playerKnowledge = db.getKnowledgeBook(playerId).getKnowledge();
-        List<IEffect> knownEffects = playerKnowledge.getOrDefault(ingredient.getId(), new ArrayList<>());
 
-        // Check for any effect that is not known.
+        // Retrieve the player's current knowledge from the knowledge book.
+        IKnowledgeBook kb = db.getKnowledgeBook(playerId);
+
+        // Look for the first effect that is not already known.
         IEffect effectToLearn = null;
         for (IEffect effect : masterEffects) {
-            if (!knownEffects.contains(effect)) {
+            if (!kb.hasKnowledge(ingredient, effect)) {
                 effectToLearn = effect;
                 break;
             }
         }
 
         if (effectToLearn != null) {
-            // Add the effect to the knowledge book.
+            // Use the public API on KnowledgeBook to add the new effect.
+            kb.addKnowledge(ingredient, effectToLearn);
+            // Also update through the database if needed.
             db.addKnowledgeEntry(playerId, ingredient, effectToLearn);
             System.out.println("Player " + playerId + " learned new effect: " + effectToLearn.getTitle());
         } else {
             System.out.println("Player " + playerId + " already knows all effects for " + ingredient.getName());
         }
     }
+
 
     /**
      * Consumes one unit of the specified potion from the player's inventory.

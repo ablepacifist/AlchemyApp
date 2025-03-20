@@ -95,8 +95,20 @@ public class KnowledgeBook implements IKnowledgeBook {
         return Collections.unmodifiableMap(unmodifiableMap);
     }
 
+
     @Override
     public String toString() {
         return "KnowledgeBook{" + "knowledge=" + knowledge + '}';
     }
+// for testing
+    @Override
+    public Map<Integer, List<IEffect>> toMap() {
+        // Return a deep copy of the knowledge map to ensure data encapsulation
+        Map<Integer, List<IEffect>> copy = new HashMap<>();
+        for (Map.Entry<Integer, List<IEffect>> entry : knowledge.entrySet()) {
+            copy.put(entry.getKey(), new ArrayList<>(entry.getValue()));
+        }
+        return copy;
+    }
+
 }

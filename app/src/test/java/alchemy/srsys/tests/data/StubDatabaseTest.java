@@ -12,6 +12,7 @@ import alchemy.srsys.object.Effect;
 import alchemy.srsys.object.IEffect;
 import alchemy.srsys.object.IIngredient;
 import alchemy.srsys.object.IInventory;
+import alchemy.srsys.object.IKnowledgeBook;
 import alchemy.srsys.object.Ingredient;
 import alchemy.srsys.object.Inventory;
 import alchemy.srsys.object.KnowledgeBook;
@@ -145,61 +146,71 @@ public class StubDatabaseTest {
     }
 
     // --- Knowledge Book Tests ---
-
     @Test
     public void testAddKnowledgeEntry() {
         IIngredient redHerb = db.getIngredientByName("Red Herb");
         IEffect healing = new Effect(1, "Healing", "Restores health over time.");
 
-        // Before adding, count effects learned for redHerb.
-        Map<Integer, List<IEffect>> kbBefore = db.getKnowledgeBook(1);
-        List<IEffect> effectsBefore = kbBefore.get(redHerb.getId());
+        // Retrieve the player's current knowledge before adding the new entry.
+        IKnowledgeBook kbBefore = db.getKnowledgeBook(1);
+        Map<Integer, List<IEffect>> mapBefore = kbBefore.getKnowledge();
+        List<IEffect> effectsBefore = mapBefore.get(redHerb.getId());
         int countBefore = (effectsBefore == null) ? 0 : effectsBefore.size();
 
+        // Add the new knowledge entry.
         db.addKnowledgeEntry(1, redHerb, healing);
 
-        Map<Integer, List<IEffect>> kbAfter = db.getKnowledgeBook(1);
-        List<IEffect> effectsAfter = kbAfter.get(redHerb.getId());
+        // Retrieve the updated knowledge book and unwrap the map.
+        IKnowledgeBook kbAfter = db.getKnowledgeBook(1);
+        Map<Integer, List<IEffect>> mapAfter = kbAfter.getKnowledge();
+        List<IEffect> effectsAfter = mapAfter.get(redHerb.getId());
         assertNotNull("Knowledge entry for Red Herb should exist", effectsAfter);
         assertEquals("Knowledge entry count should increase by 1", countBefore + 1, effectsAfter.size());
     }
-
     @Test
     public void testUpdateKnowledgeBook() {
         // For player 1, update the knowledge book with Blue Mushroom.
         IIngredient blueMushroom = db.getIngredientByName("Blue Mushroom");
         db.updateKnowledgeBook(1, blueMushroom);
 
-        Map<Integer, List<IEffect>> kb = db.getKnowledgeBook(1);
-        List<IEffect> effects = kb.get(blueMushroom.getId());
-        // Blue Mushroom was initialized with Poison and Weakness.
+        // Get the updated knowledge book and unwrap the map.
+        IKnowledgeBook kb = db.getKnowledgeBook(1);
+        Map<Integer, List<IEffect>> map = kb.getKnowledge();
+        List<IEffect> effects = map.get(blueMushroom.getId());
+
+        // Blue Mushroom was initialized with Poison and Weakness and updated to have an extra effect,
+        // therefore we expect 3 effects.
         assertNotNull("Blue Mushroom knowledge should not be null", effects);
         assertEquals("Blue Mushroom should have 3 effects in knowledge", 3, effects.size());
     }
-
     @Test
     public void testGetKnowledgeBook() {
         // Update knowledge book for Yellow Flower.
         IIngredient yellowFlower = db.getIngredientByName("Yellow Flower");
         db.updateKnowledgeBook(1, yellowFlower);
 
-        Map<Integer, List<IEffect>> kb = db.getKnowledgeBook(1);
-        List<IEffect> effects = kb.get(yellowFlower.getId());
-        // Yellow Flower was initialized with Healing and Poison.
+        // Retrieve the knowledge book and unwrap the map.
+        IKnowledgeBook kb = db.getKnowledgeBook(1);
+        Map<Integer, List<IEffect>> map = kb.getKnowledge();
+        List<IEffect> effects = map.get(yellowFlower.getId());
+
+        // Yellow Flower was initialized with Healing and Poison and processed by update logic,
+        // so we expect a total of 3 effects.
         assertNotNull("Yellow Flower knowledge should not be null", effects);
         assertEquals("Yellow Flower should have 3 effects", 3, effects.size());
     }
-
     @Test
     public void testGetEffectsForIngredient() {
-        // For Red Herb, expected effects: Healing (id 1) and Strength (id 3).
+        // For Red Herb (ingredient id 1), expected effects include Healing (id 1) and Strength (id 3).
         List<IEffect> effects = db.getEffectsForIngredient(1);
+        // Remove any accidental null values.
         effects.removeIf(Objects::isNull);
 
         assertEquals("Red Herb should have 3 effects", 3, effects.size());
-        boolean hasHealing = effects.stream().anyMatch(e -> e.getId() == 1);
+        boolean hasHealing  = effects.stream().anyMatch(e -> e.getId() == 1);
         boolean hasStrength = effects.stream().anyMatch(e -> e.getId() == 3);
         assertTrue("Red Herb should have Healing effect", hasHealing);
         assertTrue("Red Herb should have Strength effect", hasStrength);
     }
+
 }

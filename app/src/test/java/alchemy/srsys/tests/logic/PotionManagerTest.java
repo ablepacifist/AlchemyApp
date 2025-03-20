@@ -117,4 +117,16 @@ public class PotionManagerTest {
         assertEquals("Remaining quantity of ingWithShared1 should be 1", 1, (int)inv.getIngredients().get(ingWithShared1));
         assertEquals("Remaining quantity of ingNoShared should be 1", 1, (int)inv.getIngredients().get(ingNoShared));
     }
+
+
+    @Test
+    public void testBrewPotionSameIngredient() {
+        // Add one ingredient to the player's inventory.
+        Inventory inv = (Inventory) db.getPlayerInventory(playerId);
+        inv.addIngredient(ingWithShared1, 2);
+
+        // Attempt to brew a potion using the same ingredient (by passing it twice).
+        Potion potion = potionManager.brewPotion(playerId, ingWithShared1, ingWithShared1);
+        assertNull("Potion should not be brewed when both ingredients are the same", potion);
+    }
 }

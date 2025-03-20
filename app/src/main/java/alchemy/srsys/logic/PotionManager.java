@@ -2,11 +2,14 @@ package alchemy.srsys.logic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import alchemy.srsys.data.IStubDatabase;
 import alchemy.srsys.object.IIngredient;
 import alchemy.srsys.object.IEffect;
+import alchemy.srsys.object.IInventory;
+import alchemy.srsys.object.Inventory;
 import alchemy.srsys.object.Potion;
 
 public class PotionManager {
@@ -21,20 +24,40 @@ public class PotionManager {
      * The potion is created if the two ingredients share at least one effect.
      */
     public Potion brewPotion(int playerId, IIngredient ingredient1, IIngredient ingredient2) {
-        // Get the player's inventory from the database.
-        alchemy.srsys.object.IInventory inventory = db.getPlayerInventory(playerId);
-        if (inventory == null ||
-                !inventory.containsIngredient(ingredient1) ||
-                !inventory.containsIngredient(ingredient2)) {
-            System.out.println("Player " + playerId + " lacks one or both ingredients.");
+        // Check that the two ingredients are not the same.
+        if (ingredient1.getId() == ingredient2.getId()) {
+            System.out.println("Cannot brew a potion with the same ingredient twice.");
             return null;
         }
 
-        // Retrieve master effects for each ingredient.
+        // Get the player's inventory from the domain logic.
+        IInventory inventory = db.getPlayerInventory(playerId);
+        Map<IIngredient, Integer> ingredientsMap = inventory.getIngredients();
+
+        // Determine the available quantity for each ingredient by comparing IDs.
+        int quantity1 = 0;
+        int quantity2 = 0;
+        for (Map.Entry<IIngredient, Integer> entry : ingredientsMap.entrySet()) {
+            IIngredient ing = entry.getKey();
+            if (ing.getId() == ingredient1.getId()) {
+                quantity1 = entry.getValue();
+            }
+            if (ing.getId() == ingredient2.getId()) {
+                quantity2 = entry.getValue();
+            }
+        }
+
+        // Check that both ingredients exist with at least one unit available.
+        if (quantity1 < 1 || quantity2 < 1) {
+            System.out.println("Missing one or more ingredients. No potion brewed.");
+            return null;
+        }
+
+        // Retrieve the effects for each ingredient.
         List<IEffect> effects1 = db.getEffectsForIngredient(ingredient1.getId());
         List<IEffect> effects2 = db.getEffectsForIngredient(ingredient2.getId());
 
-        // Determine shared effects.
+        // Determine the shared effects.
         List<IEffect> sharedEffects = new ArrayList<>();
         for (IEffect e1 : effects1) {
             for (IEffect e2 : effects2) {
@@ -45,7 +68,7 @@ public class PotionManager {
             }
         }
 
-        // Remove one unit of each ingredient from player's inventory.
+        // Remove one unit of each ingredient.
         db.removeIngredientFromPlayerInventory(playerId, ingredient1, 1);
         db.removeIngredientFromPlayerInventory(playerId, ingredient2, 1);
 
@@ -53,15 +76,25 @@ public class PotionManager {
             System.out.println("No shared effects. No potion brewed.");
             return null;
         } else {
-            // Create and add the potion.
+            // Create the potion.
             int potionId = db.getNextPotionId();
             String potionName = "Potion of " + generatePotionName(sharedEffects);
             Potion potion = new Potion(potionId, potionName, sharedEffects, ingredient1, ingredient2);
+
+            // Insert the potion into the POTIONS table.
+            db.addPotion(potion);
+            // Add the potion to the player's inventory.
             db.addPotionToPlayerInventory(playerId, potion, 1);
+            // Update the player's knowledge book for both ingredients.
+            for (IEffect effect : sharedEffects) {
+                db.addKnowledgeEntry(playerId, ingredient1, effect);
+                db.addKnowledgeEntry(playerId, ingredient2, effect);
+            }
             System.out.println("Brewed potion: " + potionName + " for player " + playerId);
             return potion;
         }
     }
+
 
     /**
      * Helper method to generate a potion name from shared effects.

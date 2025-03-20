@@ -46,4 +46,6 @@ public interface IKnowledgeBook {
      * @return an immutable map of ingredient IDs to lists of effects
      */
     Map<Integer, List<IEffect>> getKnowledge();
+    Map<Integer, List<IEffect>> toMap();
+
 }

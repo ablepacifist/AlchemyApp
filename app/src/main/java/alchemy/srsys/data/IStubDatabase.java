@@ -49,5 +49,6 @@ public interface IStubDatabase {
     void addEffect(IEffect uniqueEffect2);
     void removePotionFromPlayerInventory(int playerId, Potion potion, int quantity);
     IIngredient getIngredientById(int ingredientId);
+    void addPotion(Potion potion);
 
 }

@@ -18,7 +18,7 @@ AlchemyApp empowers players to manage their alchemical ingredients and knowledge
 11. [Test](#test)
 
 ## Vision Statement
-- [Vision Statement](./documents/VisionStatement.md)
+- [Vision Statement](./documents/vision_statment.md)
 
 ## Features
 

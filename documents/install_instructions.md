@@ -7,7 +7,7 @@ Greetings, fellow adventurers! The **AlchemyApp** is ready to enhance your D&D c
 1. Visit the **Google Drive link** Alex has shared with you.
 2. Download the following files to your Android device:
    - **AlchemyApp APK**
-   - **README** (contains detailed app usage instructions and features).
+   - **README** (contains detailed app usage instructions and features. dont acutally need this).
 
 #### Step 2: Enable APK Installation
 1. Open your device settings and navigate to **Security** (or **Apps** depending on the device).

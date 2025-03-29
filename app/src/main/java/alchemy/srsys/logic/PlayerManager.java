@@ -56,14 +56,15 @@ public class PlayerManager {
      * Create a new player with an empty inventory and knowledge book.
      */
     public void createPlayer(String username, String password) {
-        // Let the database generate the next player ID.
         int playerId = db.getNextPlayerId();
-        Inventory inventory = new Inventory(); // Assuming a concrete Inventory class.
-        IKnowledgeBook knowledgeBook = new KnowledgeBook(new java.util.HashMap<>());
-        Player newPlayer = new Player(playerId, username, password, inventory, knowledgeBook);
+        Inventory inventory = new Inventory();
+        IKnowledgeBook knowledgeBook = new KnowledgeBook(new HashMap<>());
+        Player newPlayer = new Player(playerId, username, password, inventory, knowledgeBook); // Level starts at 1
         db.addPlayer(newPlayer);
         System.out.println("Player created: " + newPlayer);
     }
+
+
 
     public Player getPlayerById(int playerId) {
         return db.getPlayer(playerId);
@@ -91,17 +92,31 @@ public class PlayerManager {
      * @return the name of the foraged ingredient, or an empty string if none available.
      */
     public String forage(int playerId) {
+        // Retrieve the player to check their level.
+        Player player = db.getPlayer(playerId);
+        int level = player.getLevel();
+
+        // Roll a 4-sided dice to determine the quantity of ingredients.
+        Random rand = new Random();
+        int baseQuantity = rand.nextInt(4) + 1; // 1d4 roll (1 to 4)
+
+        // At level 3 or above, the player gets double the rolled quantity.
+        int quantity = (level >= 3 ? baseQuantity * 2 : baseQuantity);
+
         List<IIngredient> masterIngredients = db.getAllIngredients();
         if (masterIngredients.isEmpty()) {
             System.out.println("No ingredients available to forage.");
             return "";
         }
-        Random rand = new Random();
         IIngredient randomIngredient = masterIngredients.get(rand.nextInt(masterIngredients.size()));
-        db.addIngredientToPlayerInventory(playerId, randomIngredient, 1);
-        System.out.println("Foraged " + randomIngredient.getName() + " for player " + playerId);
+
+        // Add the determined quantity of the ingredient.
+        db.addIngredientToPlayerInventory(playerId, randomIngredient, quantity);
+        System.out.println("Foraged " + quantity + " unit(s) of "
+                + randomIngredient.getName() + " for player " + playerId);
         return randomIngredient.getName();
     }
+
     /**
      * Consumes one unit of the specified ingredient from the player's inventory.
      * After consumption, if there is an effect on that ingredient that the player hasn't learned yet,
@@ -156,5 +171,24 @@ public class PlayerManager {
         System.out.println("Player " + playerId + " consumed potion: " + potion.getName());
 
         // Optional: trigger additional logic here (e.g., apply the potion's effects)
+    }
+
+    public boolean levelUpPlayer(Player player, String secretPassword) {
+        // Check if the secret password is correct.
+        if (!"az1209lm".equals(secretPassword)) {
+            throw new IllegalArgumentException("Incorrect password for leveling up.");
+        }
+
+        // Check if already at maximum level.
+        if (player.getLevel() >= 10) {
+            return false;
+        }
+
+        // Increase level and update persistent storage.
+        if (player.levelUp()) {
+            db.updatePlayerLevel(player.getId(), player.getLevel());
+            return true;
+        }
+        return false;
     }
 }

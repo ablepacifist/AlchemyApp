@@ -1,14 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <!-- Space at the Top -->
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="64dp" />
 
     <!-- Fragment Container -->
     <FrameLayout
@@ -47,7 +41,7 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <!-- Forage Button Container -->
+    <!-- Forage Button and Profile Button Container -->
     <LinearLayout
         android:id="@+id/forageContainer"
         android:orientation="horizontal"
@@ -59,7 +53,15 @@
         <Button
             android:id="@+id/forageButton"
             android:text="Forage"
-            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/profileButton"
+            android:text="Profile"
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>

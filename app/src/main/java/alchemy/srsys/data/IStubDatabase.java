@@ -51,4 +51,5 @@ public interface IStubDatabase {
     IIngredient getIngredientById(int ingredientId);
     void addPotion(Potion potion);
 
+    void updatePlayerLevel(int id, int level);
 }

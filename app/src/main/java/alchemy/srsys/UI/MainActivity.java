@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -24,7 +25,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private Button inventoryButton, knowledgeBookButton, brewButton, forageButton;
+    private Button inventoryButton, knowledgeBookButton, brewButton, forageButton, profileButton;
     private FrameLayout fragmentContainer;
     private GameManagerService gameManager;
     private int playerId;
@@ -40,12 +41,19 @@ public class MainActivity extends AppCompatActivity {
         gameManager = MyApp.getGameManagerService(true);
 
         // Bind UI elements.
+        profileButton = findViewById(R.id.profileButton);
         inventoryButton = findViewById(R.id.inventoryButton);
         knowledgeBookButton = findViewById(R.id.knowledgeBookButton);
         brewButton = findViewById(R.id.brewButton);
         forageButton = findViewById(R.id.forageButton);
         fragmentContainer = findViewById(R.id.fragmentContainer);
 
+        // Set click listener for the Profile button.
+        profileButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            intent.putExtra("PLAYER_ID", playerId);
+            startActivity(intent);
+        });
         // Set up click listeners delegating actions via GameManagerService.
         inventoryButton.setOnClickListener(view ->
                 loadFragment(InventoryFragment.newInstance(playerId)));
@@ -57,10 +65,22 @@ public class MainActivity extends AppCompatActivity {
                 loadFragment(BrewFragment.newInstance(playerId)));
 
         forageButton.setOnClickListener(view -> {
-            // Delegate the forage action through GameManagerService.
-            String ingredientName = gameManager.forage(playerId);
-            Toast.makeText(MainActivity.this, "Foraged new ingredient: " + ingredientName, Toast.LENGTH_SHORT).show();
+            // Create a confirmation dialog
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Confirm Forage")
+                    .setMessage("Are you sure you want to forage?")
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        // Proceed with the forage action
+                        String ingredientName = gameManager.forage(playerId);
+                        Toast.makeText(MainActivity.this, "Foraged new ingredient: " + ingredientName, Toast.LENGTH_SHORT).show();
+                    })
+                    .setNegativeButton("No", (dialog, which) -> {
+                        // Do nothing and dismiss the dialog
+                        dialog.dismiss();
+                    })
+                    .show();
         });
+
 
         // Load a default fragment (e.g., InventoryFragment) on startup.
         loadFragment(InventoryFragment.newInstance(playerId));

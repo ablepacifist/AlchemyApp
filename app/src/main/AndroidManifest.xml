@@ -4,7 +4,8 @@
     <application
         android:name=".application.MyApp"
         android:allowBackup="true"
-        android:icon="@android:drawable/ic_menu_agenda"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="Alchemy"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -32,6 +33,10 @@
         <!-- Inventory Item Detail Activity -->
         <activity
             android:name=".UI.InventoryItemDetailActivity"
+            android:exported="true" />
+        <!-- Profile Activity -->
+        <activity
+            android:name=".UI.ProfileActivity"
             android:exported="true" />
 
     </application>

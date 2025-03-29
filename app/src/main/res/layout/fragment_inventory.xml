@@ -2,22 +2,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- RecyclerView for Ingredients -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ingredientsRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scrollbars="vertical" />
+    <!-- Space to move content down -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
 
-    <!-- RecyclerView for Potions -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/potionsRecyclerView"
-        android:layout_width="0dp"
+    <!-- Horizontal container for RecyclerViews -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scrollbars="vertical" />
+        android:orientation="horizontal">
+
+        <!-- RecyclerView for Ingredients -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ingredientsRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+
+        <!-- RecyclerView for Potions -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/potionsRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+    </LinearLayout>
 </LinearLayout>

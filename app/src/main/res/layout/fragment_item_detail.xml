@@ -21,10 +21,11 @@
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="32dp"/>
 
     <TextView
         android:id="@+id/itemQuantityTextView"
+        android:textSize="24sp"
         android:text="Quantity: X"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,9 +34,11 @@
     <TextView
         android:id="@+id/itemDescriptionTextView"
         android:text="Description or Known Effects"
+        android:textSize="24sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="32dp"/>
+
 
     <Button
         android:id="@+id/consumeButton"

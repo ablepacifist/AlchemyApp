@@ -22,7 +22,7 @@
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="32dp"/>
 
     <TextView
         android:id="@+id/itemQuantityTextView"
@@ -36,7 +36,7 @@
         android:text="Description or Known Effects"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="32dp"/>
 
     <ListView
         android:id="@+id/effectsListView"

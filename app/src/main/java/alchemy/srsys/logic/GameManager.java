@@ -10,7 +10,6 @@ public class GameManager implements GameManagerService {
 
     private final PlayerManager playerManager;
     private final PotionManager potionManager;
-    // Other game-related managers (e.g., InventoryManager) could also be added here
 
     // Private constructor that requires pre-built manager instances.
     private GameManager(PlayerManager playerManager, PotionManager potionManager) {

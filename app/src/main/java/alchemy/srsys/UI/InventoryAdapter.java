@@ -48,9 +48,18 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         InventoryItem item = inventoryItems.get(position);
-        holder.itemNameTextView.setText(item.getName());
-        holder.itemTypeTextView.setText(item.getType());
-        holder.itemQuantityTextView.setText("Quantity: " + item.getQuantity());
+        String name = item.getName();
+        String type = item.getType();
+        int quantity = item.getQuantity();
+
+        // If this is a potion, append its brew level to the name.
+        if ("Potion".equalsIgnoreCase(type) && item.getPotion() != null) {
+            name += " (Brew Level: " + item.getPotion().getBrewLevel() + ")";
+        }
+
+        holder.itemNameTextView.setText(name);
+        holder.itemTypeTextView.setText(type);
+        holder.itemQuantityTextView.setText("Quantity: " + quantity);
 
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) {
@@ -58,6 +67,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
             }
         });
     }
+
 
     @Override
     public int getItemCount() {

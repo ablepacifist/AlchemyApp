@@ -23,9 +23,20 @@ public interface IPotion {
      */
     IIngredient getIngredient1();
 
+    String getDice();
+
+    void setDice(String dice);
+
     /**
      * Gets the second ingredient used in the potion.
      * @return the second ingredient
      */
     IIngredient getIngredient2();
+
+    String getDescription();
+    double getDuration();
+
+    void setBrewLevel(int level);
+
+    int getBrewLevel();
 }

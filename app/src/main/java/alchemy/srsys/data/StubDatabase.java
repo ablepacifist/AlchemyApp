@@ -287,6 +287,22 @@ public class StubDatabase implements IStubDatabase {
         }
         return ingredient;
     }
+    @Override
+    public void updatePlayerLevel(int id, int level) {
+        Player player = players.get(id);
+        if (player != null) {
+            // Optionally enforce valid level boundaries (e.g., 1-10).
+            if (level >= 1 && level <= 10) {
+                player.setLevel(level);
+                System.out.println("Player " + id + " level updated to " + level);
+            } else {
+                System.err.println("Invalid level value: " + level + ". Level must be between 1 and 10.");
+            }
+        } else {
+            System.err.println("Player with id " + id + " not found.");
+        }
+    }
+
 
 
     @Override

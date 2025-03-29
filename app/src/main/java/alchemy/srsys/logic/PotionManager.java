@@ -10,6 +10,7 @@ import alchemy.srsys.object.IIngredient;
 import alchemy.srsys.object.IEffect;
 import alchemy.srsys.object.IInventory;
 import alchemy.srsys.object.Inventory;
+import alchemy.srsys.object.Player;
 import alchemy.srsys.object.Potion;
 
 public class PotionManager {
@@ -30,11 +31,11 @@ public class PotionManager {
             return null;
         }
 
-        // Get the player's inventory from the domain logic.
+        // Retrieve the player's inventory.
         IInventory inventory = db.getPlayerInventory(playerId);
         Map<IIngredient, Integer> ingredientsMap = inventory.getIngredients();
 
-        // Determine the available quantity for each ingredient by comparing IDs.
+        // Determine available quantities by comparing IDs.
         int quantity1 = 0;
         int quantity2 = 0;
         for (Map.Entry<IIngredient, Integer> entry : ingredientsMap.entrySet()) {
@@ -76,11 +77,46 @@ public class PotionManager {
             System.out.println("No shared effects. No potion brewed.");
             return null;
         } else {
-            // Create the potion.
-            int potionId = db.getNextPotionId();
-            String potionName = "Potion of " + generatePotionName(sharedEffects);
-            Potion potion = new Potion(potionId, potionName, sharedEffects, ingredient1, ingredient2);
+            // Retrieve the player's level.
+            Player player = db.getPlayer(playerId);
+            int playerLevel = player.getLevel();
 
+            // Determine the potion's duration and bonus dice based on player level.
+            double durationInMinutes;
+            String durationReadable;
+            String bonusDice;
+            if (playerLevel <= 2) {
+                durationInMinutes = 0.5;              // 30 seconds = 0.5 minutes
+                durationReadable = "30 seconds";
+                bonusDice = "1d4 or 2";
+            } else if (playerLevel <= 4) {
+                durationInMinutes = 0.75;             // 45 seconds = 0.75 minutes
+                durationReadable = "45 seconds";
+                bonusDice = "1d6 or 4";
+            } else if (playerLevel <= 7) {
+                durationInMinutes = 1.0;              // 1 minute
+                durationReadable = "1 minute";
+                bonusDice = "1d8 or 5";
+            } else if (playerLevel <= 9) {
+                durationInMinutes = 1.25;             // 1 minute 15 seconds = 1.25 minutes
+                durationReadable = "1 minute 15 seconds";
+                bonusDice = "1d10 or 6";
+            } else { // Level 10 and above
+                durationInMinutes = 2.0;              // 2 minutes
+                durationReadable = "2 minutes";
+                bonusDice = "1d12 or 9";
+            }
+            // Generate potion name and enhanced description.
+            String effectNames = generatePotionName(sharedEffects);
+            String potionName = "Potion of " + effectNames;
+            String description = "Brewed by a level " + playerLevel + " alchemist using "
+                    + ingredient1.getName() + " and " + ingredient2.getName() + ". It harnesses the effects of "
+                    + effectNames + " and lasts for " + durationReadable + " minutes.";
+
+            // Create the potion with the new details.
+            int potionId = db.getNextPotionId();
+            Potion potion = new Potion(potionId, potionName, sharedEffects, ingredient1, ingredient2, durationInMinutes, description, bonusDice);
+            potion.setBrewLevel(playerLevel);
             // Insert the potion into the POTIONS table.
             db.addPotion(potion);
             // Add the potion to the player's inventory.
@@ -91,10 +127,10 @@ public class PotionManager {
                 db.addKnowledgeEntry(playerId, ingredient2, effect);
             }
             System.out.println("Brewed potion: " + potionName + " for player " + playerId);
+            System.out.println("Potion Description: " + description);
             return potion;
         }
     }
-
 
     /**
      * Helper method to generate a potion name from shared effects.
@@ -109,6 +145,7 @@ public class PotionManager {
         }
         return sb.toString();
     }
+
     /**
      * Forage: Randomly selects an ingredient from the master list and adds one unit
      * of it to the player's inventory.

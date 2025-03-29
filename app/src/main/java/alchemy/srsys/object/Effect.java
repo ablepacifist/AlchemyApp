@@ -11,7 +11,7 @@ public class Effect implements IEffect, Serializable {
     public Effect(int id, String title,String description) {
         this.id = id;
         this.title = title;
-        this.description = ""; // Description can be populated later
+        this.description = description;
     }
 
     @Override

@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import alchemy.srsys.R;
 import alchemy.srsys.application.MyApp;
-import alchemy.srsys.logic.GameManager;
 import alchemy.srsys.logic.GameManagerService;
 import alchemy.srsys.logic.PlayerManager;
 

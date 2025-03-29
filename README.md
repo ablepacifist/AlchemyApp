@@ -77,9 +77,7 @@ AlchemyApp currently provides the following capabilities:
 
 Below is the architecture diagram for AlchemyApp. (This document and diagram will be updated as further enhancements are made.)
 
-[Detailed Diagram](./documents/AlchemyApp_Architecture_Design.pdf)
-
-![Architecture Diagram](./documents/AlchemyApp_Architecture_Design.png)
+![Architecture Diagram](./documents)
 
 ## Package Layers
 
@@ -104,14 +102,6 @@ AlchemyApp is developed using a layered architecture. This structure ensures mod
 - **Application Layer:**  
   Oversees application initialization and core services.  
   [View Application Layer](https://github.com/ablepacifist/AlchemyApp/tree/main/app/src/main/java/alchemy/srsys/application)
-
-## Branching Strategy
-
-Our branching strategy promotes organized development and smooth integration:
-
-- Create feature branches for any new functionality.
-- Merge tested features into the main branch after review.
-- For more details, refer to our [Branching Strategy Documentation](./documents/branching_strategy.txt) and see the accompanying [Branching Diagram](./documents/Branching_strategy.png).
 
 ## Dependencies
 

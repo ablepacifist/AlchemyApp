@@ -18,7 +18,7 @@ AlchemyApp empowers players to manage their alchemical ingredients and knowledge
 11. [Test](#test)
 
 ## Vision Statement
-- [Vision Statement](./documents/VisionStatement.md)
+- [Vision Statement](./documents/vision_statment.md)
 
 ## Features
 
@@ -71,15 +71,13 @@ AlchemyApp currently provides the following capabilities:
 
 ## Architecture
 
-- [Project Architecture Documentation](./documents/Architecture.md)
+- [Project Architecture Documentation](./documents/architecture_diagram.md)
 
 ### Architecture Diagram
 
 Below is the architecture diagram for AlchemyApp. (This document and diagram will be updated as further enhancements are made.)
 
-[Detailed Diagram](./documents/AlchemyApp_Architecture_Design.pdf)
-
-![Architecture Diagram](./documents/AlchemyApp_Architecture_Design.png)
+![Architecture Diagram](./documents/architecture_diagram.md)
 
 ## Package Layers
 
@@ -104,14 +102,6 @@ AlchemyApp is developed using a layered architecture. This structure ensures mod
 - **Application Layer:**  
   Oversees application initialization and core services.  
   [View Application Layer](https://github.com/ablepacifist/AlchemyApp/tree/main/app/src/main/java/alchemy/srsys/application)
-
-## Branching Strategy
-
-Our branching strategy promotes organized development and smooth integration:
-
-- Create feature branches for any new functionality.
-- Merge tested features into the main branch after review.
-- For more details, refer to our [Branching Strategy Documentation](./documents/branching_strategy.txt) and see the accompanying [Branching Diagram](./documents/Branching_strategy.png).
 
 ## Dependencies
 
@@ -172,5 +162,3 @@ Automated tests are integrated into the project. You can find them in the follow
 - **Unit Tests:** `app/src/test/java/alchemy/srsys/tests`
 - **Integration Tests:** `app/src/test/java/alchemy/srsys/tests/integration`
 - **System Tests:** `app/src/androidTest/java/alchemy/srsys/tests`
-```
-

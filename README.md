@@ -77,7 +77,7 @@ AlchemyApp currently provides the following capabilities:
 
 Below is the architecture diagram for AlchemyApp. (This document and diagram will be updated as further enhancements are made.)
 
-![Architecture Diagram](./documents)
+![Architecture Diagram](./documents/architecture_diagram.md)
 
 ## Package Layers
 

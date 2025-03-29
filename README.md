@@ -71,7 +71,7 @@ AlchemyApp currently provides the following capabilities:
 
 ## Architecture
 
-- [Project Architecture Documentation](./documents/Architecture.md)
+- [Project Architecture Documentation](./documents/architecture_diagram.md)
 
 ### Architecture Diagram
 

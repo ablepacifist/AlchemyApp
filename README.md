@@ -52,6 +52,7 @@ AlchemyApp currently provides the following capabilities:
 ## Usage
 
 **AlchemyApp** is an Android Studio project. Follow these steps to set it up:
+[install instructions for apk](./documents/install_instructions.md)
 
 1. **Clone the Repository:**
    ```bash

@@ -162,5 +162,3 @@ Automated tests are integrated into the project. You can find them in the follow
 - **Unit Tests:** `app/src/test/java/alchemy/srsys/tests`
 - **Integration Tests:** `app/src/test/java/alchemy/srsys/tests/integration`
 - **System Tests:** `app/src/androidTest/java/alchemy/srsys/tests`
-```
-
